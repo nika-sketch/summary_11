@@ -27,14 +27,22 @@ class InformationAdapter(): RecyclerView.Adapter<InformationAdapter.UserItemView
             userItem = user[bindingAdapterPosition]
             with(binding) {
                 with(userItem) {
-                    tvNameSurname.text = firstName.toString() + lastName.toString()
-                    if (firstName != "Michael" && firstName != "George") {
+                    tvNameAndSurname.text = firstName.toString() + lastName.toString()
+                    if (firstName != "Michael" && firstName != "Byron") {
                         imageView.visibility = View.INVISIBLE
                     }
+                    imageView.text = unreaMessage.toString()
 
                     Glide.with(root.context).load(avatar).apply(RequestOptions().override(60, 60)).into(ivUser);
 
-                    tvMail.text = email.toString()
+                    if (userItem.messageType == "attachment") {
+                        tvEmail.text = "Sent an Attachment"
+                    } else if (messageType == "voice") {
+                        tvEmail.text = "Sent a voice message"
+                    } else {
+                        tvEmail.text = email.toString()
+                    }
+
                     tvTime.text = "4:20 PM"
                 }
             }
