@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import ge.nlatsabidze.summary_11.R
 import ge.nlatsabidze.summary_11.databinding.UserItemBinding
 import ge.nlatsabidze.summary_11.model.UserInformation
 
@@ -36,9 +37,13 @@ class InformationAdapter(): RecyclerView.Adapter<InformationAdapter.UserItemView
                     Glide.with(root.context).load(avatar).apply(RequestOptions().override(60, 60)).into(ivUser);
 
                     if (userItem.messageType == "attachment") {
+                        ivAttachment.visibility = View.VISIBLE
                         tvEmail.text = "Sent an Attachment"
+                        ivAttachment.setImageResource(R.drawable.ic_attachment)
                     } else if (messageType == "voice") {
                         tvEmail.text = "Sent a voice message"
+                        ivAttachment.visibility = View.VISIBLE
+                        ivAttachment.setImageResource(R.drawable.ic_recorder)
                     } else {
                         tvEmail.text = email.toString()
                     }

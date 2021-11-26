@@ -19,7 +19,7 @@
         android:id="@+id/tvNameAndSurname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="24dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -30,33 +30,42 @@
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:text="TextView"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/ivUser"
-        app:layout_constraintStart_toEndOf="@+id/ivUser" />
+        app:layout_constraintStart_toEndOf="@+id/ivAttachment" />
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
-        android:text="TextView"
         android:textColor="@color/white"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:background="@color/teal_200"
+        android:text="3"
         android:id="@+id/imageView"
         android:layout_width="17dp"
         android:layout_height="17dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/teal_200"
-        android:text="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTime"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
         app:srcCompat="@android:drawable/alert_light_frame" />
+
+    <ImageView
+        android:id="@+id/ivAttachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ivUser"
+        app:layout_constraintStart_toEndOf="@+id/ivUser"
+        app:srcCompat="@drawable/ic_recorder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
